@@ -9,16 +9,18 @@ import { StateService } from './state.service';
 export class AppComponent {
   title = 'angularWebComponent';
 
-  get person() {
-    return this.state.person;
-  }
+  // Alla fine non è necessario, perchè lo stato
+  // può essere esposto direttamente
+  // get person() {
+  //   return this.state.person;
+  // }
 
-  constructor(private state: StateService) {
+  constructor(public state: StateService) {
   }
 
   onWebComponentprint(event: any) {
     console.log('clicked in angular');
-    if (this.person) {
+    if (this.state.person) {
       this.state.fullname = '' +  event.person.Name + event.person.Surname;
     }
   }

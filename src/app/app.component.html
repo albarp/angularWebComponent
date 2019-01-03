@@ -6,7 +6,7 @@
       <app-list></app-list>
     </div>
     <div class="col-8">
-      <my-component [person]='person' (print)="onWebComponentprint($event)"></my-component>
+      <my-component [person]='state.person' (print)="onWebComponentprint($event)"></my-component>
     </div>
   </div>
 </div>
